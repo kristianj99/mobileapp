@@ -1,5 +1,5 @@
 package com.example.mobileapp;
-
+//import classes
 import com.example.mobileapp.data.SatelliteData;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,10 +19,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+//class for the upcoming pass recycler view
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.satellitePassesViewHolder> {
     private List<SatelliteData> satellitePasses;
     private Context context;
-    private SharedPreferences sharedPreferences;
 
     public RecyclerViewAdapter(List<SatelliteData> satellitePasses, Context context ) {
         super();
@@ -30,6 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.context = context;
     }
 
+    //creates a view holder based off o the view_pass xml
     @NonNull
     @Override
     public satellitePassesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -38,6 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return viewHolder;
     }
 
+    //fills the data received from the api into the recycler view
     @Override
     public void onBindViewHolder(@NonNull satellitePassesViewHolder holder, int position) {
 
@@ -92,15 +94,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
+    //gets the size of the satellite passes list
     @Override
     public int getItemCount() {
         return this.satellitePasses.size();
     }
 
+    //sets the data to the list returned by the api
     public void setSatelliteData(List<SatelliteData> data) {
         this.satellitePasses = data;
     }
 
+    //view holder class
     class satellitePassesViewHolder extends RecyclerView.ViewHolder {
         private View itemView;
         private RecyclerViewAdapter adapter;

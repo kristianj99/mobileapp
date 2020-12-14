@@ -1,12 +1,14 @@
 package com.example.mobileapp.data;
-
+//importing classes
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+//class for the data for the upcoming satellite passes, creates a table called satellite data
 @Entity(tableName = "SatelliteData")
 public class SatelliteData {
 
+    //primary key called ui, get and set
     @NonNull
     @PrimaryKey(autoGenerate = true)
     private int uid;
@@ -19,6 +21,7 @@ public class SatelliteData {
         this.uid = uid;
     }
 
+    //declaring variables
     private String satelliteName;
     private int noOfPasses;
     private String startDirection;
@@ -32,6 +35,8 @@ public class SatelliteData {
     private double UserLocLat;
     private double UserLocLong;
 
+
+    //getters and setters
     public SatelliteData() {
         super();
     }

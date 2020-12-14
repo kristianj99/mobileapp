@@ -121,7 +121,7 @@
                 android:layout_marginEnd="133dp"
                 android:layout_marginRight="133dp"
                 android:layout_marginBottom="64dp"
-                android:text="View Previous Passes"
+                android:text="View Passes Right Now"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -135,7 +135,7 @@
                 android:layout_marginEnd="159dp"
                 android:layout_marginRight="159dp"
                 android:layout_marginBottom="46dp"
-                android:text="Recent Passes"
+                android:text="Current Passes"
                 app:layout_constraintBottom_toTopOf="@+id/satPass_CurrentPass"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

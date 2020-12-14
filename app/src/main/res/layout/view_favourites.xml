@@ -42,33 +42,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.022" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/fav_List"
-                android:layout_width="409dp"
-                android:layout_height="327dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="101dp"
-                app:layout_constraintBottom_toTopOf="@+id/fav_Continue"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <Button
-                android:id="@+id/fav_Continue"
-                android:layout_width="156dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="128dp"
-                android:layout_marginLeft="128dp"
-                android:layout_marginEnd="128dp"
-                android:layout_marginRight="128dp"
-                android:layout_marginBottom="134dp"
-                android:text="Continue"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
             <ImageButton
                 android:id="@+id/fav_Delete"
                 android:layout_width="wrap_content"
@@ -79,6 +52,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_delete" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fav_Recycler"
+                android:layout_width="407dp"
+                android:layout_height="582dp"
+                android:layout_marginTop="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fav_ViewFav" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
