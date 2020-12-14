@@ -131,9 +131,13 @@ public class SatellitePasses extends AppCompatActivity implements View.OnClickLi
         prefLat = String.valueOf(LocLat);
         prefLong = String.valueOf(LocLong);
 
-        //creates an array of 4 starlink satellite id's. there are hundreds more, but these are 4 from 4 seperate launches that would like have other satellites nearby
-        //with the api being used, i didn't want to overload it by adding more, so more might be able to be used, but for now i am only using 4
-        satellites = new String[]{"47181", "46798", "46729","46591"};
+        //creates an array of the amount of starlink satellite id's. there are hundreds, but i had difficulty with the stability of the api at doing multiple searches, with many times it returning the value as null
+        //although it is only 1 satellite, as multiple are launched at the same time it would be likely the viewer would see multiple satellites as the same time as the one it displays on screen
+        //in future this could be used to search multiple trains of satellites, and it did work when adding extra id's into the app, however it wasn't stable and often returned errors, so for the sake of the app working
+        // in demonstration i chose to only show one
+        //46798, 46729, and 46591 were the id's i also used to test in development. if you want you can try and add these to the array, but as i said, sometimes it just returns null for an unknown reason, and sometimes it displays
+        //the whole list
+        satellites = new String[]{"47181"};
 
         //list that will combine the 4 api searches
         final List<SatelliteData> combined = new ArrayList<SatelliteData>();

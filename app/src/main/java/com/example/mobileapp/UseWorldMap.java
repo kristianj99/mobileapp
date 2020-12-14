@@ -27,8 +27,8 @@ public class UseWorldMap extends AppCompatActivity implements View.OnClickListen
     private GoogleMap.OnCameraIdleListener onCameraIdleListener;
 
     //declare variables
-    Double LocLat;
-    Double LocLong;
+    Double LocLat = 0.0;
+    Double LocLong = 0.0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //uses the layout use_world_map xml
@@ -78,12 +78,17 @@ public class UseWorldMap extends AppCompatActivity implements View.OnClickListen
     //when the continue button is pressed, it takes the location from the marker placed and starts the satellitepasses activity
     public void onClick(View view) {
         if (view.getId() == R.id.worldMap_Continue) {
-            Intent intent = new Intent(getApplicationContext(), SatellitePasses.class);
-            intent.putExtra("Latitude", LocLat);
-            intent.putExtra("Longitude", LocLong);
-            Log.i(String.valueOf(LocLat), String.format("Latitude is ", LocLat));
-            Log.i(String.valueOf(LocLong), String.format("Longitude is ", LocLong));
-            startActivity(intent);
+            if (LocLat == 0 && LocLong == 0) {
+
+            } else {
+                Intent intent = new Intent(getApplicationContext(), SatellitePasses.class);
+                intent.putExtra("Latitude", LocLat);
+                intent.putExtra("Longitude", LocLong);
+                Log.i(String.valueOf(LocLat), String.format("Latitude is ", LocLat));
+                Log.i(String.valueOf(LocLong), String.format("Longitude is ", LocLong));
+                startActivity(intent);
+            }
+
 
         }
     }
